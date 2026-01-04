@@ -1,8 +1,8 @@
 name: Actualizador Vitile Automático
 on:
   schedule:
-    - cron: '0 * * * *' # Corre automáticamente cada 1 hora
-  workflow_dispatch: # Te permite ejecutarlo manualmente con un botón
+    - cron: '*/15 * * * *' # ¡Configurado cada 15 minutos!
+  workflow_dispatch: # Botón para correrlo a mano
 
 jobs:
   build:
