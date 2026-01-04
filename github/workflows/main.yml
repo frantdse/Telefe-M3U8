@@ -1,1 +1,22 @@
+name: Actualizador Vitile Automático
+on:
+  schedule:
+    - cron: '0 * * * *' # Corre automáticamente cada 1 hora
+  workflow_dispatch: # Te permite ejecutarlo manualmente con un botón
 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Ejecutar Script de Telefe
+        run: node update_telefe.js
+        env:
+          VITILE_TOKEN: ${{ secrets.VITILE_TOKEN }}
