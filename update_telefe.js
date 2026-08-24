@@ -1,4 +1,4 @@
-cconst fs = require('fs');
+const fs = require('fs');
 
 const LAMBDA_URL = "https://57j4mtvcjjf7siqnnvkixb5d3i0uvjei.lambda-url.us-east-1.on.aws/";
 const STREAM_ID = "6a024684fd4ca6a938f3a118";
