@@ -19,7 +19,7 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Ejecutar script de actualización
         run: node update_telefe.js
@@ -27,10 +27,6 @@ jobs:
       - name: Subir cambios a GitHub
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add telefe.m3u8
-          git commit -m "Auto-update telefe.m3u8 [skip ci]" || exit 0
-          git push
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add telefe.m3u8
           git commit -m "Auto-update telefe.m3u8 [skip ci]" || exit 0
